@@ -43,7 +43,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Check out my solution on Front end mentor](https://your-solution-url.com)
-- Live Site URL: [Check out the live site](https://your-live-site-url.com)
+- Live Site URL: [Check out the live site](https://gundi-world-explorer.netlify.app/)
 
 ## My process
 

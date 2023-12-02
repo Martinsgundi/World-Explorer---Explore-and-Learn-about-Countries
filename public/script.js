@@ -60,6 +60,30 @@ function isMouseOnContent (element) {
 
 
 
+// Scroll to top function
+const scrollUpBtn = document.getElementById('scrollToTopBtn');
+
+const scrollPageToTop = () => {
+    document.body.scrollTop = 0; // For safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, Internet explorer and Opera mini
+};
+
+scrollUpBtn.addEventListener('click', scrollPageToTop);
+
+
+//  Show button on scroll
+const toggleScrollToTopBtn = () => {
+    if (document.body.scrollTop > 2500 || document.documentElement.scrollTop > 2500) {
+        scrollUpBtn.classList.remove('hidden');
+    } else {
+        scrollUpBtn.classList.add('hidden');
+    }
+};
+
+window.onscroll = toggleScrollToTopBtn;
+
+
+
 // Function to highlight matching words
 function highlightMatchingWords(name, search) {
     const regex = new RegExp(`(${search})`, 'gi');
@@ -111,7 +135,7 @@ const populateHomepage = async () => {
             
             const countryContainer = document.querySelector('.country-container');
             const countryCard = document.createElement('a');
-            countryCard.href = `/public/details.html?name=${name}`;
+            countryCard.href = `./details.html?name=${name}`;
             countryCard.target = '_blank';
             countryCard.className = 'country-card bg-white w-[80%] max-w-[353px] mx-auto pb-10 md:hover:scale-105 md:w-full md:mx-0'
         

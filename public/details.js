@@ -24,7 +24,7 @@ const getCountryByName = async () => {
 
         renderCountryDetails(country);
 
-        backToMainPageBtn.addEventListener('click', () => window.location.replace('/public/index.html')); 
+        backToMainPageBtn.addEventListener('click', () => window.location.replace('./index.html')); 
 
     } catch(err) {
         console.error(`Error fetching country details: ${err}`)
@@ -90,7 +90,7 @@ export const renderCountryDetails = (country) => {
 
         borders.forEach(border => {
             borderHtml += `
-                <a class="py-2 w-full max-w-[6rem] text-center bg-white rounded-md border-country box-shadow dark-transition lg:px-4" href="/public/border-country-details.html?countrycode=${border}" target="_blank">${border}</a>
+                <a class="py-2 w-full max-w-[6rem] text-center bg-white rounded-md border-country box-shadow dark-transition lg:px-4" href="./border-country-details.html?countrycode=${border}" target="_blank">${border}</a>
             `;
         });
 

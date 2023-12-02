@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All about Countries</title>
+    <title>World Explorer</title>
     <link rel="shortcut icon" href="assets/images/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="output.css">
 </head>
@@ -90,6 +90,13 @@
             <div class="country-container grid gap-8 mt-[-8rem] mb-16 md:grid-cols-2 md:gap-24 md2:grid-cols-3 md2:gap-16 xl:grid-cols-4"></div>
         </div>
     </main>
+
+    <!-- Scroll to top button -->
+    <button aria-label="Scroll to Top" id="scrollToTopBtn" class="fixed top-[90%] right-[1vw] hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5" />
+        </svg>
+    </button>
     
     <script  type="module" src="script.js"></script>
 </body>

@@ -21,7 +21,7 @@ const getCountryByCode = async () => {
         
         renderCountryDetails(country);
 
-        backToMainPageBtn.addEventListener('click', () => window.location.replace('/public/index.html'))
+        backToMainPageBtn.addEventListener('click', () => window.location.replace('./index.html'))
 
     } catch(err) {
         console.error(`Error fetching country details: ${err}`);
