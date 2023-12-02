@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,600;6..12,800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.box-shadow {
+    box-shadow: 0 1px 6px  rgba(0, 0, 0, 0.1);
+}
+
+/* Details page box-shadow */
+.box-shadow2 {
+    box-shadow: 0 1px 7px  rgba(0, 0, 0, 0.5);
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+#regions::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: .22rem;
+    width: 100%;
+    background-color: hsl(0, 0%, 95%);
+}
+
+input::placeholder {
+    opacity: .8;
+}
+
+/* Dark mode styles*/
+body.dark, #regions.dark::before {
+    background-color: hsl(207, 26%, 17%);
+    color: hsl(0, 0%, 100%);
+}
+
+.header.dark, input.dark,
+#filter-element.dark, 
+#regions.dark, 
+.border-country.dark,
+.country-container > .country-card.dark {
+    background-color: hsl(209, 23%, 22%);
+}
+
+svg#moon.dark, svg#arrow.dark {
+    fill: hsl(0, 0%, 100%);
+    stroke: hsl(0, 0%, 100%);
+}
+
+/* Dark mode transition effect */
+.dark-transition {
+   @apply transition duration-500 ease-linear;
+}
+
+.regionn.dark::before {
+    background-color: hsl(0, 0%, 100%);
+}
+
+.regionn {
+    position: relative;
+}
+
+.regionn::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: -1.5px;
+    right: 0;
+    background-color: hsl(200, 15%, 8%);
+    transition: width 0.3s ease-out;
+}
+
+.regionn:hover::before {
+    width: 100%;
+}
+
+
+/* Search feature highlighted Text style */
+.highlight {
+    background-color: rgb(255, 255, 0);
+}

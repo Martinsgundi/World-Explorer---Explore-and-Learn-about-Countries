@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All about Countries</title>
+    <link rel="shortcut icon" href="assets/images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="text-sm font-medium font-NunitoSans text-veryDarkBlueText bg-veryLightGray dark-transition">
+
+    <header>
+        <div class="header bg-white dark-transition fixed w-full top-0 z-10 flex justify-between items-center py-8 px-[4vw] box-shadow lg:py-4">
+            <div>
+                <span class="font-extrabold sm:text-lg lg:text-xl xl:text-2xl">Where in the world?</span>
+            </div>
+    
+            <!-- Dark mode toggle -->
+            <div>
+                <button aria-label="click to toggle dark mode" class="flex items-center gap-2 dark-btn">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" class="w-4 h-4 dark-transition lg:w-[1.1rem] lg:h-[1.1rem]">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>            
+                    <span class="text-sm lg:text-base">Dark Mode</span>          
+                </button>
+            </div>    
+        </div>
+    </header>
+
+    
+    <main>
+        <div class="px-[4vw] mt-[7rem] lg:mt-[5.5rem]">
+            <div class="flex flex-col gap-10 md:flex-row md:justify-between">
+                <div class="relative w-full h-fit"> <!-- Search Box -->
+
+                    <!-- Search icon -->
+                    <button id="search-btn" aria-label="click to search for any country" class="absolute bottom-[.95rem] left-10 pointer-events-none md:top-[39%] md:translate-y-[-.2rem]">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" stroke-width="1.4" stroke="hsl(0, 0%, 80%)" class="w-5 h-5 dark-transition">
+                            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+                        </svg> 
+                    </button>
+                                  
+                    <input type="text" class="input dark-transition p-4 w-full max-w-[414px] rounded-md outline-none indent-20 box-shadow" placeholder="Search for a country..."/>
+                </div>
+
+                <div class="max-w-[400px] md:w-[230px]"> <!--Filter container-->
+                   <div id="filter-element" class="dark-transition bg-white rounded-md box-shadow w-[55%] md:w-full">
+                        <button id="filter-btn" class="flex items-center justify-between w-full p-4 px-5" aria-label="click to filter countries by region" aria-expanded="false" aria-controls="regions">
+                            <span>Filter by Region</span>
+
+                            <svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 transition-all duration-500 ease-out arrow-icon">
+                                <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                   </div>
+
+                   <div id="regions" aria-hidden="true" class="pointer-events-none bg-white relative px-6 py-4 rounded-md box-shadow w-[55%] opacity-0 dark-transition z-50 md:w-full">
+                        <ul class="grid gap-2">
+                            
+                            <li>
+                                <button id="all" class="cursor-pointer regionn w-fit">All</button>
+                            </li>
+
+                            <li>
+                                <button class="cursor-pointer regionn region-btn w-fit">Africa</button>
+                            </li>
+
+                            <li>
+                                <button class="cursor-pointer regionn region-btn w-fit">Americas</button>
+                            </li>
+
+                            <li>
+                                <button class="cursor-pointer regionn region-btn w-fit">Asia</button>
+                            </li>
+
+                            <li>
+                                <button class="cursor-pointer regionn region-btn w-fit">Europe</button>
+                            </li>
+
+                            <li>
+                                <button class="cursor-pointer regionn region-btn w-fit">Oceania</button>
+                            </li>
+                        </ul>
+                   </div>
+                </div>
+            </div>
+
+
+            <!-- Country data container -->
+            <div class="country-container grid gap-8 mt-[-8rem] mb-16 md:grid-cols-2 md:gap-24 md2:grid-cols-3 md2:gap-16 xl:grid-cols-4"></div>
+        </div>
+    </main>
+    
+    <script  type="module" src="script.js"></script>
+</body>
+</html>
