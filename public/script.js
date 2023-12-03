@@ -148,9 +148,9 @@ const populateHomepage = async () => {
                         <h3 class="name text-2xl font-extrabold mb-4">${name}</h3>
 
                         <ul class="grid gap-1">
-                            <li class="text-base"> <span class="font-semibold">Population:</span> <span class="font-light">${population.toLocaleString()}</span> </li>
-                            <li class="text-base"> <span class="font-semibold">Region:</span> <span class="region font-light">${region}</span> </li>
-                            <li class="text-base"> <span class="font-semibold">Capital:</span> <span class="font-light">${capital}</span> </li>
+                            <li> <span class="font-semibold">Population:</span> <span class="font-light">${population.toLocaleString()}</span> </li>
+                            <li> <span class="font-semibold">Region:</span> <span class="region font-light">${region}</span> </li>
+                            <li> <span class="font-semibold">Capital:</span> <span class="font-light">${capital}</span> </li>
                         </ul>
                     </div> 
                 </div>

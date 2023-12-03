@@ -51,20 +51,20 @@ export const renderCountryDetails = (country) => {
                 <div class="mb-9 sm:flex sm:gap-32 lg:mb-12">
                     <div>
                         <ul class="grid gap-3 mb-11 lg:gap-2 lg:mb-0">
-                            <li class= "lg:text-base">Native Name: <span class="font-light">${country.name.nativeName[Object.keys(country.name.nativeName)[0]].common}</span></li>
-                            <li class= "lg:text-base">Population: <span class="font-light">${country.population.toLocaleString()}</span></li>
-                            <li class= "lg:text-base">Region: <span class="font-light">${country.region}</span></li>
-                            <li class= "lg:text-base">Sub Region: <span class="font-light">${country.subregion}</span></li>
-                            <li class= "lg:text-base">Capital: <span class="font-light">${country.capital}</span></li>
+                            <li>Native Name: <span class="font-light">${country.name.nativeName[Object.keys(country.name.nativeName)[0]].common}</span></li>
+                            <li>Population: <span class="font-light">${country.population.toLocaleString()}</span></li>
+                            <li>Region: <span class="font-light">${country.region}</span></li>
+                            <li>Sub Region: <span class="font-light">${country.subregion}</span></li>
+                            <li>Capital: <span class="font-light">${country.capital}</span></li>
                         </ul>    
                     </div>
                     
                     <div>
                         <ul class="grid gap-3 lg:gap-2">
-                            <li>Time Zone<small>(s)</small>:<span class="font-light text-base">${country.timezones.map(timeZone => " " + timeZone).slice(0, 2)}</span></li>
-                            <li>Top Level Domain<small>(s)</small>:<span class="font-light text-base">${country.tld.map(tld => " " + tld).slice(0, 2)}</span></li>
-                            <li>Currencies: <span class="font-light text-base">${country.currencies[Object.keys(country.currencies)[0]].name}</span></li>
-                            <li>Official Language<small>(s)</small>:<span class="font-light text-base">${Object.values(country.languages).map(languageName => ' ' + languageName)}</span></li>
+                            <li>Time Zone<small>(s)</small>:<span class="font-light">${country.timezones.map(timeZone => " " + timeZone).slice(0, 2)}</span></li>
+                            <li>Top Level Domain<small>(s)</small>:<span class="font-light">${country.tld.map(tld => " " + tld).slice(0, 2)}</span></li>
+                            <li>Currencies: <span class="font-light">${country.currencies[Object.keys(country.currencies)[0]].name}</span></li>
+                            <li>Official Language<small>(s)</small>:<span class="font-light">${Object.values(country.languages).map(languageName => ' ' + languageName)}</span></li>
                         </ul>    
                     </div>
                 </div>
