@@ -157,7 +157,7 @@ const populateHomepage = async () => {
                     <div style="background-image: url('${flag}');" class="mb-6 bg-cover bg-top bg-no-repeat h-[170px] w-full rounded-t-md"></div>
 
                     <div class="px-7">
-                        <h3 class="name text-2xl font-extrabold mb-4">${name}</h3>
+                        <h2 class="name text-2xl font-extrabold mb-4">${name}</h2>
 
                         <ul class="grid gap-1">
                             <li> <span class="font-semibold">Population:</span> <span class="font-light">${population.toLocaleString()}</span> </li>

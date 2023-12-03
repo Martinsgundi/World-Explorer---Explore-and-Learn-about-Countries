@@ -46,7 +46,7 @@ export const renderCountryDetails = (country) => {
             </div>
 
             <div class="justify-self-end self-center">
-                <h3 class="mb-6 text-2xl font-extrabold lg:text-[2.05rem]">${country.name.common}</h3>
+                <h2 class="mb-6 text-2xl font-extrabold lg:text-[2.05rem]">${country.name.common}</h2>
 
                 <div class="mb-9 sm:flex sm:gap-32 lg:mb-12">
                     <div>
