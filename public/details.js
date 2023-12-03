@@ -113,7 +113,7 @@ export const renderCountryDetails = (country) => {
 
     const moonIcon = document.getElementById('moon');
     const body = document.body;
-    const header = document.querySelector('.header');
+    const header = document.querySelector('.header');       
     
     const enableDarkMode = () => {
         for (const borderCountry of borderCountries) {
