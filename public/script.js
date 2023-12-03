@@ -3,6 +3,7 @@ const filterElement = document.getElementById('filter-element');
 const filterBtn = document.getElementById('filter-btn');
 const filterContent = document.getElementById('regions');
 const arrowUp = document.querySelector('.arrow-icon');
+const regionBtns = document.querySelectorAll('.regionn');
 
 // Toggle filter content
 filterBtn.addEventListener('click', () => {
@@ -12,6 +13,13 @@ filterBtn.addEventListener('click', () => {
     const isExpanded = filterBtn.getAttribute('aria-expanded') === 'true';  // Gets a boolean response, so it can be assigned to the aria attributes
     filterBtn.setAttribute('aria-expanded', !isExpanded); 
     filterContent.setAttribute('aria-hidden', isExpanded);
+    
+    regionBtns.forEach(regionBtn => {
+        const tabIndex = regionBtn.getAttribute('tabindex');
+
+        // Toggles value of tabindex
+        regionBtn.setAttribute('tabindex', (tabIndex === '-1') ? '0' : '-1');
+    });
 });
 
 // Shows content when user hover on the element
@@ -21,6 +29,7 @@ filterElement.addEventListener('mouseenter', () => {
     arrowUp.classList.add('rotate');
     filterBtn.setAttribute('aria-expanded', 'true'); 
     filterContent.setAttribute('aria-hidden', 'false');
+    regionBtns.forEach(regionBtn => regionBtn.setAttribute('tabindex', '0'));
 });
 
 // Hides content when user hover off the element
@@ -32,6 +41,8 @@ filterElement.addEventListener('mouseleave', () => {
         arrowUp.classList.remove('rotate');
         filterBtn.setAttribute('aria-expanded', 'false'); 
         filterContent.setAttribute('aria-hidden', 'true');
+        regionBtns.forEach(regionBtn => regionBtn.setAttribute('tabindex', '-1'));
+
     };
 
     // Hides the content when mouse leaves the displayed content
@@ -42,6 +53,7 @@ filterElement.addEventListener('mouseleave', () => {
             arrowUp.classList.remove('rotate');
             filterBtn.setAttribute('aria-expanded', 'false'); 
             filterContent.setAttribute('aria-hidden', 'true');
+            regionBtns.forEach(regionBtn => regionBtn.setAttribute('tabindex', '-1'));
         };
     });
 });
@@ -201,7 +213,6 @@ const populateHomepage = async () => {
         const input = document.querySelector('input');
         const filterBox = document.getElementById('filter-element');
         const regionBox = document.getElementById('regions');
-        const regionTitles = document.querySelectorAll('.regionn');
 
 
         const enableDarkMode = () => {
@@ -212,7 +223,7 @@ const populateHomepage = async () => {
             input.classList.add('dark');
             filterBox.classList.add('dark');
             regionBox.classList.add('dark');
-            regionTitles.forEach(regionTitle => regionTitle.classList.add('dark'));
+            regionBtns.forEach(regionBtn => regionBtn.classList.add('dark'));
 
             for (const card of countryCards) {
                 card.classList.add('dark')
@@ -229,7 +240,7 @@ const populateHomepage = async () => {
             input.classList.remove('dark');
             filterBox.classList.remove('dark');
             regionBox.classList.remove('dark');
-            regionTitles.forEach(regionTitle => regionTitle.classList.remove('dark'));
+            regionBtns.forEach(regionBtn => regionBtn.classList.remove('dark'));
 
             for (const card of countryCards) {
                 card.classList.remove('dark')
